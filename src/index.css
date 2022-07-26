@@ -1,0 +1,186 @@
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+::selection {
+  background: #7e22ce;
+  color: #fff;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+
+.dark ::selection {
+  background: #67e8f9;
+  color: #000;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+
+.button-bounce-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.button-bounce-enter.button-bounce-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.button-bounce-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.button-bounce-exit.button-bounce-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 6px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7e22ce;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #67e8f9;
+}
+
+.dark ::-webkit-scrollbar {
+  background: #000;
+}
+
+.dark .nav-btn__wrap {
+  background: #090909;
+
+}
+
+.nav-btn__wrap {
+  border: .5px solid #eee;
+}
+
+.dark .navbar {
+  background: #090909;
+}
+
+.nav-btn {
+  width: 80%;
+  height: 2px;
+  border-radius: 2px;
+  background: #eee;
+  position: relative;
+  transition: .3s ease-in-out;
+}
+
+.nav-btn:before, .nav-btn:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  left: 0;
+  background: #eee;
+  border-radius: 2px;
+  transition: .3s ease-in-out;
+}
+
+.nav-btn:before {
+  transform: translateY(-6px);
+}
+
+.nav-btn.active {
+  background: #eee0;
+}
+
+.nav-btn.active:before {
+  transform: translateY(0) rotate(45deg);
+  animation: beforeDash .5s ease;
+}
+
+.nav-btn:after {
+  transform: translateY(6px);
+}
+
+.nav-btn.active:after {
+  transform: translateY(0) rotate(-45deg);
+  animation: afterDash .5s ease;
+}
+
+.dark .nav-btn__wrap {
+  border-color: #222;
+}
+
+.dark .nav-btn {
+  border-color: #222;
+  background: #67e8f9;
+}
+
+.dark .nav-btn:before , .dark .nav-btn:after {
+  background: #67e8f9;
+}
+
+.dark .nav-btn.active {
+  background: #67e8f900;
+}
+
+@keyframes beforeDash {
+  0% {
+    transform: translateY(-6px) rotate(0);
+  }
+  40% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}
+
+@keyframes afterDash {
+  0% {
+    transform: translateY(6px) rotate(0);
+  }
+  40% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
