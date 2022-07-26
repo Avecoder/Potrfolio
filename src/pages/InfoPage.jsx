@@ -1,7 +1,7 @@
 import MyButton from '../UI/MyButton'
 import githubIcon from '../assets/dark-github.svg'
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import InfoText from '../components/InfoText'
 
@@ -10,13 +10,16 @@ const InfoPage = (props) => {
   const { theme } = useSelector(state => state.theme)
   const { works, skills } = useSelector(state => state.posts)
   const { id } = useParams()
-  const [post, setPost] = useState(null)
 
   useEffect(() => {
-    const currentPost = [...works.filter(item => item.id === id), ...skills.filter(item => item.id === id)]
-    setPost(currentPost[0])
-
+    window.scrollTo(0, 0)
   }, [])
+
+  const post = useMemo(() => {
+    const currentPost = [...works.filter(item => item.id === id), ...skills.filter(item => item.id === id)]
+    return currentPost[0]
+  }, [works, skills])
+
 
   const stack = []
 
