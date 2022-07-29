@@ -153,6 +153,40 @@ html, body {
   background: #67e8f900;
 }
 
+.post-text ul {
+  padding-left: 26px;
+  margin: 14px 0;
+}
+
+.post-text li {
+  list-style: circle;
+  margin-bottom: 16px;
+}
+
+.post-text a {
+  color: #7e22ce;
+}
+
+.post-text p {
+  margin-bottom: 18px;
+}
+
+.post-text p img {
+  max-width: 85%;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
+.post-text h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.dark .post-text a {
+  color: #67e8f9;
+}
+
 @keyframes beforeDash {
   0% {
     transform: translateY(-6px) rotate(0);

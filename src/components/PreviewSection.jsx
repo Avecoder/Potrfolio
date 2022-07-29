@@ -15,7 +15,7 @@ const PreviewSection = (props) => {
       <h1 className="text-3xl sm:text-5xl font-bold mb-2">
         <Typewriter options={{cursor: '_'}} onInit={(typewriter)=> {
            typewriter
-            .typeString(`Веб-разработчик`)
+            .typeString(`Avecoder`)
             .pauseFor(500)
             .start()
            }}
